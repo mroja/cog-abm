@@ -25,6 +25,7 @@ class Simulation(object):
 		self.agents = tuple(agents)
 		self.statistic = []
 		self.dump_often = False
+		self.iteration = 0
 	
 
 	def dump_results(self, iter_num):
@@ -59,6 +60,7 @@ class Simulation(object):
 		for _ in xrange(num_iter):
 			agents = self._choose_agents()
 			self._start_interaction(agents)
+			self.iteration += 1
 
 	def _do_main_loop(self, iterations, dump_freq):
 		start_time = time()
